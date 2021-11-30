@@ -1,3 +1,3 @@
 #! /bin/bash
 
-find . -name '*.sh' | sed 's/.sh//g'
+find . -name '*.sh' -type f | cut -d "." -f2 | sed 's|/||'
