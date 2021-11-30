@@ -1,1 +1,1 @@
-find . -name -regex 'a* | *z | z*a!'
+find . -name 'a* | *z | z*a!'
