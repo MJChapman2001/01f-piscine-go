@@ -23,7 +23,7 @@ func PrintComb2() {
 			for num3 <= '9' {
 				for num4 <= '9' {
 					if num1 == num3 && num2 == num4 {
-						Count(num4)
+						continue
 					} else {
 						z01.PrintRune(num1)
 						z01.PrintRune(num2)
@@ -36,8 +36,8 @@ func PrintComb2() {
 							z01.PrintRune(',')
 							z01.PrintRune(' ')
 						}
-						Count(num4)
 					}
+					Count(num4)
 				}
 				Count(num3)
 			}
