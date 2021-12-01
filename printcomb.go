@@ -13,7 +13,7 @@ func PrintComb() {
 		secondDigit = firstDigit + 1
 		thirdDigit = secondDigit + 1
 
-		for secondDigit <= '9' {
+		for secondDigit < '9' {
 
 			for thirdDigit <= '9' {
 				z01.PrintRune(firstDigit)
