@@ -13,7 +13,7 @@ func BasicAtoi(s string) int {
 					if z == 0 {
 						pow = 1
 					} else {
-						pow *= pow
+						pow *= 10
 					}
 				}
 				val += int(numArr[j]) * pow
