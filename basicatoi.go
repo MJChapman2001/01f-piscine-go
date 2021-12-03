@@ -8,8 +8,8 @@ func BasicAtoi(s string) int {
 		if int(runeArr[i])-48 == 0 {
 			val += 0
 		} else {
-			for z := 0; z <= j; z++ {
-				pow *= pow
+			for z := 1; z < j; z++ {
+				pow *= 10
 			}
 			val += (int(runeArr[i]) - 48) * pow
 		}
