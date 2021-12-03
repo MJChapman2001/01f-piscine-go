@@ -2,7 +2,8 @@ package BasicAtoi
 
 func BasicAtoi(s string) int {
 	runeArr := []rune(s)
-	val := 0
+	var val int64
+	val = 0
 	for i, j := 0, len(runeArr); i < len(runeArr); i, j = i+1, j-1 {
 		pow := 10
 		if int(runeArr[i])-48 == 0 {
