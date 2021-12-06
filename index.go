@@ -8,10 +8,12 @@ func Index(s string, toFind string) int {
 		found := false
 		if s[i] == toFind[0] {
 			for j := 0; j < len(toFind); j++ {
-				if s[i+j] == toFind[j] {
-					found = true
-				} else {
-					found = false
+				if i+j < len(s) {
+					if s[i+j] == toFind[j] {
+						found = true
+					} else {
+						found = false
+					}
 				}
 			}
 			if found {
