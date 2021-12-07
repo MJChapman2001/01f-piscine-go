@@ -10,7 +10,7 @@ import (
 func main() {
 	name := os.Args[0]
 
-	for i := 0; i < len(name); i++ {
+	for i := 2; i < len(name); i++ {
 		if piscine.IsAlpha(string(name[i])) {
 			z01.PrintRune(rune(name[i]))
 		}
