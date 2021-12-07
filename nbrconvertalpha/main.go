@@ -17,7 +17,7 @@ func main() {
 		}
 
 		for j := 0; j < len(numArr); j++ {
-			if numArr[j] == 0 {
+			if numArr[j] == 0 || numArr[j] > 26 {
 				runeArr = append(runeArr, ' ')
 			} else {
 				runeArr = append(runeArr, ('A' + rune(numArr[j]-1)))
@@ -29,7 +29,7 @@ func main() {
 		}
 
 		for j := 0; j < len(numArr); j++ {
-			if numArr[j] == 0 {
+			if numArr[j] == 0 || numArr[j] > 26 {
 				runeArr = append(runeArr, ' ')
 			} else {
 				runeArr = append(runeArr, ('a' + rune(numArr[j]-1)))
