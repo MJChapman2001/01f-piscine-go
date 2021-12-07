@@ -10,13 +10,12 @@ func PrintNbrInOrder(n int) {
 		n /= 10
 	}
 
-	for j := 0; j < len(nArr); j++ {
-		Sort(nArr)
-	}
+	Sort(nArr)
 
 	for k := 0; k < len(nArr); k++ {
-		z01.PrintRune(rune(nArr[k] + 48))
+		z01.PrintRune(rune(nArr[k]))
 	}
+	z01.PrintRune('\n')
 }
 
 func Sort(n []int) []int {
@@ -25,6 +24,12 @@ func Sort(n []int) []int {
 			a := n[i]
 			n[i] = n[i+1]
 			n[i+1] = a
+		}
+	}
+
+	for j := 0; j < len(n)-1; j++ {
+		if n[j] > n[j+1] {
+			Sort(n)
 		}
 	}
 
