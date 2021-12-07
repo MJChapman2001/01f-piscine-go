@@ -10,7 +10,7 @@ func main() {
 	name := os.Args[0]
 
 	if len(name) == 0 {
-		z01.PrintRune(' ')
+		z01.PrintRune(rune(0))
 	} else {
 		for i := 0; i < len(name); i++ {
 			if IsAlpha(name[i]) {
