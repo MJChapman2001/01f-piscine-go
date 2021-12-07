@@ -20,7 +20,7 @@ func main() {
 			if numArr[j] == 0 {
 				runeArr = append(runeArr, ' ')
 			} else {
-				runeArr = append(runeArr, ('A' + rune(numArr[j])))
+				runeArr = append(runeArr, ('A' + rune(numArr[j]-1)))
 			}
 		}
 	} else {
@@ -32,14 +32,13 @@ func main() {
 			if numArr[j] == 0 {
 				runeArr = append(runeArr, ' ')
 			} else {
-				runeArr = append(runeArr, ('a' + rune(numArr[j])))
+				runeArr = append(runeArr, ('a' + rune(numArr[j]-1)))
 			}
 		}
 	}
 
 	for k := 0; k < len(runeArr); k++ {
 		z01.PrintRune(runeArr[k])
-		z01.PrintRune('\n')
 	}
 }
 
