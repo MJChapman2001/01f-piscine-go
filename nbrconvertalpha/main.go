@@ -11,34 +11,36 @@ func main() {
 	var numArr []int
 	var runeArr []rune
 
-	if params[0] == "--upper" {
-		for i := 1; i < len(params); i++ {
-			numArr = append(numArr, BasicAtoi2(params[i]))
-		}
+	if len(params) > 0 {
+		if params[0] == "--upper" {
+			for i := 1; i < len(params); i++ {
+				numArr = append(numArr, BasicAtoi2(params[i]))
+			}
 
-		for j := 0; j < len(numArr); j++ {
-			if numArr[j] == 0 || numArr[j] > 26 {
-				runeArr = append(runeArr, ' ')
-			} else {
-				runeArr = append(runeArr, ('A' + rune(numArr[j]-1)))
+			for j := 0; j < len(numArr); j++ {
+				if numArr[j] == 0 || numArr[j] > 26 {
+					runeArr = append(runeArr, ' ')
+				} else {
+					runeArr = append(runeArr, ('A' + rune(numArr[j]-1)))
+				}
+			}
+		} else {
+			for i := 0; i < len(params); i++ {
+				numArr = append(numArr, BasicAtoi2(params[i]))
+			}
+
+			for j := 0; j < len(numArr); j++ {
+				if numArr[j] == 0 || numArr[j] > 26 {
+					runeArr = append(runeArr, ' ')
+				} else {
+					runeArr = append(runeArr, ('a' + rune(numArr[j]-1)))
+				}
 			}
 		}
-	} else {
-		for i := 0; i < len(params); i++ {
-			numArr = append(numArr, BasicAtoi2(params[i]))
-		}
 
-		for j := 0; j < len(numArr); j++ {
-			if numArr[j] == 0 || numArr[j] > 26 {
-				runeArr = append(runeArr, ' ')
-			} else {
-				runeArr = append(runeArr, ('a' + rune(numArr[j]-1)))
-			}
+		for k := 0; k < len(runeArr); k++ {
+			z01.PrintRune(runeArr[k])
 		}
-	}
-
-	for k := 0; k < len(runeArr); k++ {
-		z01.PrintRune(runeArr[k])
 	}
 
 	z01.PrintRune('\n')
