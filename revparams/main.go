@@ -9,10 +9,10 @@ import (
 func main() {
 	name := os.Args[1:]
 
-	for i := 0; i < len(name); i++ {
+	for i := len(name) - 1; i >= 0; i-- {
 		runeArr := []rune(name[i])
 
-		for j := len(runeArr) - 1; j >= 0; j-- {
+		for j := 0; j < len(runeArr); j++ {
 			z01.PrintRune(runeArr[j])
 		}
 
