@@ -7,9 +7,11 @@ import (
 )
 
 func main() {
-	name := os.Args[1]
+	name := []rune(os.Args[0])
 
-	for i := 0; i < len(name); i++ {
-		z01.PrintRune(rune(name[i]))
+	for i := 2; i < len(name); i++ {
+		z01.PrintRune(name[i])
 	}
+
+	z01.PrintRune('\n')
 }
