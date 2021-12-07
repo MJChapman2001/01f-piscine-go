@@ -15,7 +15,6 @@ func PrintNbrInOrder(n int) {
 	for k := 0; k < len(nArr); k++ {
 		z01.PrintRune(rune(nArr[k] + 48))
 	}
-	z01.PrintRune('\n')
 }
 
 func Sort(n []int) []int {
