@@ -10,7 +10,9 @@ func main() {
 	name := os.Args[0]
 
 	for i := 0; i < len(name); i++ {
-		if IsAlpha(name[i]) {
+		if name[i] == 32 {
+			z01.PrintRune(' ')
+		} else if IsAlpha(name[i]) {
 			z01.PrintRune(rune(name[i]))
 		}
 	}
