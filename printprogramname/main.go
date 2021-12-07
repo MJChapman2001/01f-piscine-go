@@ -9,15 +9,22 @@ import (
 func main() {
 	name := os.Args[0]
 
-	if name[0] == 46 && name[1] == 47 {
-		for i := 2; i < len(name); i++ {
-			z01.PrintRune(rune(name[i]))
-		}
-	} else {
-		for i := 0; i < len(name); i++ {
+	for i := 0; i < len(name); i++ {
+		if IsAlpha(name[i]) {
 			z01.PrintRune(rune(name[i]))
 		}
 	}
 
 	z01.PrintRune('\n')
+}
+
+func IsAlpha(s byte) bool {
+	if s < 48 || s > 122 {
+		return false
+	} else if s > 57 && s < 65 {
+		return false
+	} else if s > 90 && s < 97 {
+		return false
+	}
+	return true
 }
