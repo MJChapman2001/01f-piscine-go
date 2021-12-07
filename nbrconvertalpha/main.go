@@ -41,9 +41,9 @@ func main() {
 		for k := 0; k < len(runeArr); k++ {
 			z01.PrintRune(runeArr[k])
 		}
-	}
 
-	z01.PrintRune('\n')
+		z01.PrintRune('\n')
+	}
 }
 
 func BasicAtoi2(s string) int {
