@@ -16,11 +16,11 @@ func main() {
 		fmt.Println("--order\n   -o\n     This flag will behave like a boolean, if it is called it will order the argument.")
 	} else {
 		for i := 0; i < len(args); i++ {
-			if len(args[i]) > 10 && args[i][0:9] == "--insert=" {
+			if len(args[i]) > 9 && args[i][0:9] == "--insert=" {
 				for j := 9; j < len(args[i]); j++ {
 					output = append(output, rune(args[i][j]))
 				}
-			} else if args[i][0:3] == "-i=" {
+			} else if len(args[i]) > 3 && args[i][0:3] == "-i=" {
 				for j := 3; j < len(args[i]); j++ {
 					output = append(output, rune(args[i][j]))
 				}
