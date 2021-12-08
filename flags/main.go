@@ -24,13 +24,17 @@ func main() {
 				for j := 3; j < len(args[i]); j++ {
 					output = append(output, rune(args[i][j]))
 				}
-			}
-
-			if args[i] == "--order" || args[i] == "-o" && i < len(args)-1 {
+			} else if args[i] == "--order" || args[i] == "-o" && i < len(args)-1 {
 				for j := 0; j < len(args[i+1]); j++ {
 					output = append(output, rune(args[i+1][j]))
 					Sort(output)
 				}
+			} else {
+				var runeArr []rune
+				for j := len(args[i]) - 1; j >= 0; j-- {
+					runeArr = append(runeArr, rune(args[i][j]))
+				}
+				output = append(runeArr, output...)
 			}
 		}
 
