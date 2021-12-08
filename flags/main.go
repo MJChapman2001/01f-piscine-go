@@ -30,10 +30,7 @@ func main() {
 					Sort(output)
 				}
 			} else {
-				var runeArr []rune
-				for j := len(args[i]) - 1; j >= 0; j-- {
-					runeArr = append(runeArr, rune(args[i][j]))
-				}
+				runeArr := []rune(args[i])
 				output = append(runeArr, output...)
 			}
 		}
