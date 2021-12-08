@@ -12,8 +12,8 @@ func main() {
 	var output []rune
 
 	if len(args) == 0 || args[0] == "-h" || args[0] == "--help" {
-		fmt.Println("--insert\n   -i\n     This flag inserts the string into the string passed as argument.")
-		fmt.Println("--order\n   -o\n     This flag will behave like a boolean, if it is called it will order the argument.")
+		fmt.Println("--insert\n   -i\n   This flag inserts the string into the string passed as argument.")
+		fmt.Println("--order\n   -o\n   This flag will behave like a boolean, if it is called it will order the argument.")
 	} else {
 		for i := 0; i < len(args); i++ {
 			if len(args[i]) > 9 && args[i][0:9] == "--insert=" {
