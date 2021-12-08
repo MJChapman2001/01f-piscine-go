@@ -1,6 +1,6 @@
 package piscine
 
-func SplitWhiteSpace(s string) []string {
+func SplitWhiteSpaces(s string) []string {
 	var output []string
 
 	for i, j := 0, 0; i < len(s); i++ {
