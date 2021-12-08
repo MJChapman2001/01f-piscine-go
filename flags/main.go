@@ -31,8 +31,8 @@ func main() {
 			} else if args[i] == "--order" || args[i] == "-o" && i < len(args)-1 {
 				for j := 0; j < len(args[i+1]); j++ {
 					output = append(output, rune(args[i+1][j]))
-					Sort(output)
 				}
+				Sort(output)
 				i++
 				break
 			} else {
