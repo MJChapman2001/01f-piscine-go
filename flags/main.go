@@ -51,7 +51,7 @@ func main() {
 
 func Sort(n []rune) []rune {
 	for i := 0; i < len(n)-1; i++ {
-		if n[i] > n[i+1] {
+		if n[i] > n[i+1] || n[i] == ' ' {
 			a := n[i]
 			n[i] = n[i+1]
 			n[i+1] = a
