@@ -29,6 +29,8 @@ func main() {
 					output = append(output, rune(args[i+1][j]))
 					Sort(output)
 				}
+				i++
+				break
 			} else {
 				runeArr := []rune(args[i])
 				output = append(runeArr, output...)
