@@ -38,6 +38,8 @@ func main() {
 		for k := 0; k < len(output); k++ {
 			z01.PrintRune(output[k])
 		}
+
+		z01.PrintRune('\n')
 	}
 }
 
