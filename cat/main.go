@@ -25,7 +25,7 @@ func main() {
 				z01.PrintRune(rune(message[j]))
 			}
 
-			if message == err.Error() {
+			if err != nil {
 				os.Exit(1)
 			} else {
 				z01.PrintRune('\n')
