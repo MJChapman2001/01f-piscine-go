@@ -2,7 +2,6 @@ package piscine
 
 func IsSorted(f func(a, b int) int, a []int) bool {
 	val := 0
-	pos := 0
 
 	for val == 0 {
 		for i := 0; i < len(a)-1; i++ {
