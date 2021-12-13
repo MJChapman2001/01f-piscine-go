@@ -19,7 +19,7 @@ func main() {
 		if err != nil {
 			fmt.Println("File not found")
 		} else {
-			fmt.Println(string(file))
+			fmt.Print(string(file))
 		}
 	}
 }
