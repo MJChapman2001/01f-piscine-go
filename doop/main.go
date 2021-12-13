@@ -27,15 +27,29 @@ func main() {
 			} else if args[1] == "%" && args[2] == "0" {
 				Zero(args[1])
 			} else {
-				Run(res)
+				Run(args)
 			}
 		}
 	}
 }
 
-func Run(s string) int {
-	res, _ := strconv.Atoi(s)
-	return res
+func Run(s []string) int {
+	val1, _ := strconv.Atoi(s[0])
+	val2, _ := strconv.Atoi(s[2])
+
+	if s[1] == "+" {
+		return val1 + val2
+	} else if s[1] == "-" {
+		return val1 - val2
+	} else if s[1] == "/" {
+		return val1 / val2
+	} else if s[1] == "*" {
+		return val1 * val2
+	} else if s[1] == "%" {
+		return val1 % val2
+	}
+
+	return 0
 }
 
 func Zero(s string) string {
