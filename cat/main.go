@@ -18,7 +18,7 @@ func main() {
 			if err != nil {
 				message = err.Error()
 			} else {
-				message = string(file)
+				message = "ERROR: " + string(file)
 			}
 
 			for j := range message {
