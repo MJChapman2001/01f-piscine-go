@@ -26,6 +26,7 @@ func main() {
 			}
 
 			if err != nil {
+				z01.PrintRune('\n')
 				os.Exit(1)
 			}
 		}
