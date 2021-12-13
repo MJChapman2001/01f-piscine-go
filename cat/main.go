@@ -27,6 +27,8 @@ func main() {
 
 			if message == err.Error() {
 				os.Exit(1)
+			} else {
+				z01.PrintRune('\n')
 			}
 		}
 	}
