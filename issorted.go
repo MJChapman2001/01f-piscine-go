@@ -6,7 +6,11 @@ func IsSorted(f func(a, b int) int, a []int) bool {
 
 	for val == 0 {
 		for pos < len(a)-1 {
-			val = f(a[pos], a[pos+1])
+			if f(a[pos], a[pos+1]) != 0 {
+				val = f(a[pos], a[pos+1])
+				break
+			}
+
 			pos++
 		}
 	}
