@@ -16,7 +16,7 @@ func main() {
 			var message string
 
 			if err != nil {
-				message = "ERROR: " + args[i] + ": No such file or directory"
+				message = err.Error()
 			} else {
 				message = string(file)
 			}
