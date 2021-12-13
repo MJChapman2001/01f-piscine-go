@@ -23,9 +23,13 @@ func main() {
 
 	for i := range output {
 		if output[i] == '!' {
-			z01.PrintRune(rune(points.x))
+			for j := points.x; j != 0; j /= 10 {
+				z01.PrintRune(rune(j % 10))
+			}
 		} else if output[i] == '*' {
-			z01.PrintRune(rune(points.y))
+			for j := points.y; j != 0; j /= 10 {
+				z01.PrintRune(rune(j % 10))
+			}
 		} else {
 			z01.PrintRune(rune(output[i]))
 		}
