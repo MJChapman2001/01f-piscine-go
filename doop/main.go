@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"strconv"
 )
@@ -24,12 +23,31 @@ func main() {
 
 		if runnable {
 			if args[1] == "/" && args[2] == "0" {
-				fmt.Println("No division by 0")
+				Zero(args[1])
 			} else if args[1] == "%" && args[2] == "0" {
-				fmt.Println("No modulo by 0")
+				Zero(args[1])
 			} else {
-				fmt.Println(strconv.Atoi(res))
+				Run(res)
 			}
 		}
 	}
+}
+
+func Run(s string) int {
+	res, _ := strconv.Atoi(s)
+	return res
+}
+
+func Zero(s string) string {
+	sign := ""
+
+	if s == "/" {
+		sign = "division"
+	} else {
+		sign = "modulo"
+	}
+
+	output := "No " + sign + " by 0"
+
+	return output
 }
