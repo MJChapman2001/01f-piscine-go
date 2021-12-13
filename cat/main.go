@@ -24,6 +24,10 @@ func main() {
 			for j := range message {
 				z01.PrintRune(rune(message[j]))
 			}
+
+			if message == err.Error() {
+				os.Exit(1)
+			}
 		}
 	}
 }
