@@ -24,8 +24,6 @@ func main() {
 			for j := range message {
 				z01.PrintRune(rune(message[j]))
 			}
-
-			z01.PrintRune('\n')
 		}
 	}
 }
