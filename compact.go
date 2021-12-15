@@ -3,26 +3,20 @@ package piscine
 func Compact(ptr *[]string) int {
 	count := 0
 	temp := *ptr
-	comp := make([]string, len(temp))
 
 	for i := range temp {
-		if temp[i] != "" {
+		if temp[i] == "" {
+			RemoveIndex(temp, i)
+		} else {
 			count++
-			for j := range comp {
-				if comp[j] == "" {
-					comp[j] = temp[i]
-				}
-			}
 		}
 	}
 
-	for k := range comp {
-		if comp[k] == "" {
-			comp = comp[0:k]
-		}
-	}
-
-	*ptr = comp
+	*ptr = temp
 
 	return count
+}
+
+func RemoveIndex(s []string, i int) []string {
+	return append(s[:i], s[i+1:]...)
 }
