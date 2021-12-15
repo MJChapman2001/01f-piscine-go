@@ -14,7 +14,7 @@ func SortInt(a []int) []int {
 			temp := a[i]
 			a[i] = a[i+1]
 			a[i+1] = temp
-			Sort(a)
+			SortInt(a)
 		}
 	}
 
