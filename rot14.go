@@ -7,13 +7,13 @@ func Rot14(s string) string {
 	for i := range arr {
 		if s[i] > 64 && s[i] < 91 {
 			if s[i]+14 > 90 {
-				arr[i] = rune(65 + (s[i] + 14 - 90))
+				arr[i] = rune((s[i] + 14) - (91 - 64))
 			} else {
 				arr[i] = rune(s[i] + 14)
 			}
 		} else if s[i] > 96 && s[i] < 123 {
 			if s[i]+14 > 122 {
-				arr[i] = rune(97 + (s[i] + 14 - 122))
+				arr[i] = rune((s[i] + 14) - (123 - 96))
 			} else {
 				arr[i] = rune(s[i] + 14)
 			}
