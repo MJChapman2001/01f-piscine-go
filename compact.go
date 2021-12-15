@@ -6,10 +6,10 @@ func Compact(ptr *[]string) int {
 	for i := range temp {
 		if temp[i] == "" {
 			temp = RemoveIndex(temp, i)
+			*ptr = temp
+			Compact(ptr)
 		}
 	}
-
-	*ptr = temp
 
 	return len(temp)
 }
