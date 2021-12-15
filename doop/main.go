@@ -38,17 +38,20 @@ func Maths(s []string) string {
 		result = val1 - val2
 		output = IntToString(result)
 	case "*":
+		if val1 == 9223372036854775807 || val2 == 9223372036854775807 {
+			return ""
+		}
 		result = val1 * val2
 		output = IntToString(result)
 	case "/":
-		if val2 == 0 {
+		if val2 == 0 || val1 == 0 {
 			return "No division by 0\n"
 		} else {
 			result = val1 / val2
 			output = IntToString(result)
 		}
 	case "%":
-		if val2 == 0 {
+		if val2 == 0 || val1 == 0 {
 			return "No modulo by 0\n"
 		} else {
 			result = val1 % val2
