@@ -18,9 +18,11 @@ func Compact(ptr *[]string) int {
 
 	for k := range comp {
 		if comp[k] == "" {
-			*ptr = comp[:k]
+			comp = comp[0:k]
 		}
 	}
+
+	*ptr = comp
 
 	return count
 }
