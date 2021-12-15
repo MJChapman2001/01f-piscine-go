@@ -19,43 +19,58 @@ func main() {
 		}
 
 		if runnable {
-			Maths(args)
+			os.Stdout.WriteString(Maths(args))
 		}
 	}
 }
 
-func Maths(s []string) int {
+func Maths(s []string) string {
 	val1, _ := strconv.Atoi(s[0])
 	val2, _ := strconv.Atoi(s[2])
+	var result int
+	var output string
 
 	switch s[1] {
 	case "+":
-		return val1 + val2
+		result = val1 + val2
+		output = IntToString(result)
 	case "-":
-		return val1 - val2
+		result = val1 - val2
+		output = IntToString(result)
 	case "*":
-		return val1 * val2
+		result = val1 * val2
+		output = IntToString(result)
 	case "/":
 		if val2 == 0 {
-			Zero(s[1])
+			return "No division by 0"
 		} else {
-			return val1 / val2
+			result = val1 / val2
+			output = IntToString(result)
 		}
 	case "%":
 		if val2 == 0 {
-			Zero(s[1])
+			return "No modulo by 0"
 		} else {
-			return val1 % val2
+			result = val1 % val2
+			output = IntToString(result)
 		}
 	}
 
-	return 0
+	return output
 }
 
-func Zero(sign string) string {
-	if sign == "/" {
-		return "No division by 0"
-	} else {
-		return "No modulo by 0"
+func IntToString(nbr int) string {
+	var runeArr []rune
+	output := ""
+
+	for nbr != 0 {
+		runeArr = append(runeArr, rune((nbr%10)+48))
+		nbr /= 10
 	}
+
+	for i := len(runeArr) - 1; i >= 0; i-- {
+		output += string(runeArr[i])
+	}
+
+	return output
 }
