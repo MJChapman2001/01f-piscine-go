@@ -63,7 +63,7 @@ func IntToString(nbr int) string {
 	var runeArr []rune
 	output := ""
 
-	if nbr > 0 {
+	if nbr > 0 && nbr < 9223372036854775807 {
 		for nbr != 0 {
 			runeArr = append(runeArr, rune((nbr%10)+48))
 			nbr /= 10
@@ -74,7 +74,7 @@ func IntToString(nbr int) string {
 		}
 	} else if nbr == 0 {
 		output += "0"
-	} else {
+	} else if nbr < 0 && nbr > -9223372036854775807 {
 		nbr *= -1
 
 		for nbr != 0 {
