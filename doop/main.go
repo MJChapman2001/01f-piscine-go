@@ -11,11 +11,11 @@ func main() {
 	if len(args) == 3 {
 		runnable := true
 
-		for i := range args {
-			_, err := strconv.Atoi(args[i])
-			if err != nil {
-				runnable = false
-			}
+		_, err1 := strconv.Atoi(args[0])
+		_, err2 := strconv.Atoi(args[2])
+
+		if err1 != nil || err2 != nil {
+			runnable = false
 		}
 
 		if runnable {
