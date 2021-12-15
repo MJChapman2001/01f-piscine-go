@@ -89,6 +89,8 @@ func IntToString(nbr int) string {
 		for i := len(runeArr) - 1; i >= 0; i-- {
 			output += string(runeArr[i])
 		}
+
+		output += "\n"
 	}
 
 	return output
