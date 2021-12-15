@@ -9,11 +9,11 @@ import (
 
 func main() {
 	args := os.Args[1:]
+	var message string
 
 	if len(args) > 0 {
 		for i := range args {
 			file, err := ioutil.ReadFile(args[i])
-			var message string
 
 			if err != nil {
 				message = "ERROR: " + err.Error()
@@ -28,6 +28,14 @@ func main() {
 			if err != nil {
 				z01.PrintRune('\n')
 				os.Exit(1)
+			}
+		}
+	} else if len(args) == 0 {
+		message, err := ioutil.ReadAll(os.Stdin)
+
+		if err == nil {
+			for j := range message {
+				z01.PrintRune(rune(message[j]))
 			}
 		}
 	}
