@@ -33,26 +33,26 @@ func Maths(s []string) string {
 	switch s[1] {
 	case "+":
 		result = val1 + val2
-		output = IntToString(result)
+		output = IntToString(result) + "\n"
 	case "-":
 		result = val1 - val2
-		output = IntToString(result)
+		output = IntToString(result) + "\n"
 	case "*":
 		result = val1 * val2
-		output = IntToString(result)
+		output = IntToString(result) + "\n"
 	case "/":
 		if val2 == 0 {
 			return "No division by 0"
 		} else {
 			result = val1 / val2
-			output = IntToString(result)
+			output = IntToString(result) + "\n"
 		}
 	case "%":
 		if val2 == 0 {
 			return "No modulo by 0"
 		} else {
 			result = val1 % val2
-			output = IntToString(result)
+			output = IntToString(result) + "\n"
 		}
 	}
 
