@@ -33,26 +33,26 @@ func Maths(s []string) string {
 	switch s[1] {
 	case "+":
 		result = val1 + val2
-		output = IntToString(result) + "\n"
+		output = IntToString(result)
 	case "-":
 		result = val1 - val2
-		output = IntToString(result) + "\n"
+		output = IntToString(result)
 	case "*":
 		result = val1 * val2
-		output = IntToString(result) + "\n"
+		output = IntToString(result)
 	case "/":
 		if val2 == 0 {
 			return "No division by 0\n"
 		} else {
 			result = val1 / val2
-			output = IntToString(result) + "\n"
+			output = IntToString(result)
 		}
 	case "%":
 		if val2 == 0 {
 			return "No modulo by 0\n"
 		} else {
 			result = val1 % val2
-			output = IntToString(result) + "\n"
+			output = IntToString(result)
 		}
 	}
 
@@ -72,8 +72,10 @@ func IntToString(nbr int) string {
 		for i := len(runeArr) - 1; i >= 0; i-- {
 			output += string(runeArr[i])
 		}
+
+		output += "\n"
 	} else if nbr == 0 {
-		output += "0"
+		output += "0\n"
 	} else if nbr < 0 && nbr > -9223372036854775807 {
 		nbr *= -1
 
