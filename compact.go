@@ -1,20 +1,17 @@
 package piscine
 
 func Compact(ptr *[]string) int {
-	count := 0
 	temp := *ptr
 
 	for i := range temp {
 		if temp[i] == "" {
-			RemoveIndex(temp, i)
-		} else {
-			count++
+			temp = RemoveIndex(temp, i)
 		}
 	}
 
 	*ptr = temp
 
-	return count
+	return len(temp)
 }
 
 func RemoveIndex(s []string, i int) []string {
