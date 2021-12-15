@@ -5,7 +5,7 @@ func Compact(ptr *[]string) int {
 	var comp []string
 
 	for i := range temp {
-		if temp[i] == "" {
+		if temp[i] == "" || temp[i] == " " {
 			comp = RemoveIndex(temp, i)
 		}
 	}
