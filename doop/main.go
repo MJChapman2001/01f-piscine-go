@@ -63,13 +63,30 @@ func IntToString(nbr int) string {
 	var runeArr []rune
 	output := ""
 
-	for nbr != 0 {
-		runeArr = append(runeArr, rune((nbr%10)+48))
-		nbr /= 10
-	}
+	if nbr > 0 {
+		for nbr != 0 {
+			runeArr = append(runeArr, rune((nbr%10)+48))
+			nbr /= 10
+		}
 
-	for i := len(runeArr) - 1; i >= 0; i-- {
-		output += string(runeArr[i])
+		for i := len(runeArr) - 1; i >= 0; i-- {
+			output += string(runeArr[i])
+		}
+	} else if nbr == 0 {
+		output += "0"
+	} else {
+		nbr *= -1
+
+		for nbr != 0 {
+			runeArr = append(runeArr, rune((nbr%10)+48))
+			nbr /= 10
+		}
+
+		output += "-"
+
+		for i := len(runeArr) - 1; i >= 0; i-- {
+			output += string(runeArr[i])
+		}
 	}
 
 	return output
