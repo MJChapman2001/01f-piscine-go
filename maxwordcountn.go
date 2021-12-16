@@ -30,15 +30,7 @@ func MaxWordCountN(text string, n int) map[string]int {
 	tempMap := make(map[string]int)
 
 	for _, i := range textSlice {
-		found := false
-
-		for j := range tempMap {
-			if i == j {
-				found = true
-			}
-		}
-
-		if found {
+		if tempMap[i] > 0 {
 			tempMap[i]++
 		} else {
 			tempMap[i] = 1
