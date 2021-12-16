@@ -4,16 +4,15 @@ func Unmatch(a []int) int {
 	val := -1
 
 	for i := range a {
-		found := false
+		count := 1
 
 		for j := 0; j < len(a); j++ {
 			if a[i] == a[j] && i != j {
-				found = true
-				break
+				count++
 			}
 		}
 
-		if !found {
+		if count%2 != 0 {
 			val = a[i]
 			break
 		}
