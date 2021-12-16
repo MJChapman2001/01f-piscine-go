@@ -20,6 +20,8 @@ func MaxWordCountN(text string, n int) map[string]int {
 		if rune(text[i]) == ' ' {
 			if i != j {
 				textSlice = append(textSlice, text[j:i])
+			} else {
+				textSlice = append(textSlice, "")
 			}
 			j = i + 1
 		} else if i == len(text)-1 {
