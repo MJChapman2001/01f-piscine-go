@@ -5,7 +5,7 @@ func Atoi(s string) int {
 	sign := 1
 
 	for i := range s {
-		if s[i] == '-' && output == 0 {
+		if rune(s[i]) == '-' && output == 0 {
 			sign = -1
 		}
 
@@ -13,8 +13,10 @@ func Atoi(s string) int {
 			output *= 10
 			output += int(s[i] - 48)
 		} else {
-			output = 0
-			break
+			if rune(s[i]) != '-' && rune(s[i]) != '+' {
+				output = 0
+				break
+			}
 		}
 	}
 
