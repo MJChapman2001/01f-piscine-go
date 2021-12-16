@@ -24,7 +24,6 @@ func MaxWordCountN(text string, n int) map[string]int {
 			m = l + 1
 		} else if l == len(text)-1 {
 			textSlice = append(textSlice, text[m:])
-			textSlice = append(textSlice, "")
 		}
 
 		l++
@@ -32,8 +31,8 @@ func MaxWordCountN(text string, n int) map[string]int {
 
 	tempMap := make(map[string]int)
 
-	for _, i := range textSlice {
-		tempMap[i]++
+	for i := 0; i < len(textSlice); i++ {
+		tempMap[textSlice[i]]++
 	}
 
 	sorted := make(Pairlist, len(tempMap))
