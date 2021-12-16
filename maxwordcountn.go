@@ -43,7 +43,7 @@ func MaxWordCountN(text string, n int) map[string]int {
 
 	sort.Sort(sorted)
 
-	output := make(map[string]int, n)
+	output := make(map[string]int)
 
 	for i := 0; i < n; i++ {
 		j := i + 1
