@@ -16,17 +16,15 @@ func (p Pairlist) Less(i, j int) bool { return p[j].Value < p[i].Value }
 func MaxWordCountN(text string, n int) map[string]int {
 	var textSlice []string
 
-	m := 0
-	l := 0
-	for l < len(text) {
-		if rune(text[l]) == ' ' {
-			textSlice = append(textSlice, text[m:l])
-			m = l + 1
-		} else if l == len(text)-1 {
-			textSlice = append(textSlice, text[m:])
+	for i, j := 0, 0; i < len(text); i++ {
+		if rune(text[i]) == ' ' {
+			if i != j {
+				textSlice = append(textSlice, text[j:i])
+			}
+			j = i + 1
+		} else if i == len(text)-1 {
+			textSlice = append(textSlice, text[j:])
 		}
-
-		l++
 	}
 
 	tempMap := make(map[string]int)
