@@ -12,6 +12,9 @@ func Atoi(s string) int {
 		if s[i] > 47 && s[i] < 58 {
 			output *= 10
 			output += int(s[i] - 48)
+		} else {
+			output = 0
+			break
 		}
 	}
 
