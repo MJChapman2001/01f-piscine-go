@@ -17,14 +17,18 @@ func main() {
 		if err == nil {
 			power := 2
 
-			for power < input {
-				power *= 2
-			}
-
-			if power == input {
-				output = "true"
-			} else {
+			if input == 1 {
 				output = "false"
+			} else {
+				for power < input {
+					power *= 2
+				}
+
+				if power == input {
+					output = "true"
+				} else {
+					output = "false"
+				}
 			}
 		}
 
