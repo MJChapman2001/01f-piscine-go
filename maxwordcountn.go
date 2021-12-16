@@ -21,7 +21,11 @@ func MaxWordCountN(text string, n int) map[string]int {
 			textSlice = append(textSlice, text[j:i])
 			j = i + 1
 		} else if i == len(text)-1 {
-			textSlice = append(textSlice, text[j:])
+			if rune(text[i]) == ' ' {
+				textSlice = append(textSlice, "")
+			} else {
+				textSlice = append(textSlice, text[j:])
+			}
 		}
 	}
 
