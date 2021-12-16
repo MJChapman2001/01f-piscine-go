@@ -18,7 +18,7 @@ func main() {
 			power := 2
 
 			if input == 1 {
-				output = "false"
+				output = "true"
 			} else {
 				for power < input {
 					power *= 2
