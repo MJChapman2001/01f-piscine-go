@@ -46,9 +46,8 @@ func MaxWordCountN(text string, n int) map[string]int {
 	output := make(map[string]int, n)
 
 	for i := 0; i < n; i++ {
-		if i+1 < len(sorted) && sorted[i].Value == sorted[i+1].Value {
-			j := i + 1
-
+		j := i + 1
+		if j < len(sorted) && sorted[i].Value == sorted[j].Value {
 			if sorted[i].Key < sorted[j].Key {
 				output[sorted[i].Key] = sorted[i].Value
 			} else {
