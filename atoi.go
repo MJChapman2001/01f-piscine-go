@@ -16,6 +16,9 @@ func Atoi(s string) int {
 			if rune(s[i]) != '-' && rune(s[i]) != '+' {
 				output = 0
 				break
+			} else if i != 0 {
+				output = 0
+				break
 			}
 		}
 	}
