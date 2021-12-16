@@ -6,8 +6,8 @@ func Unmatch(a []int) int {
 	for i := range a {
 		found := false
 
-		for j := i + 1; j < len(a); j++ {
-			if a[i] == a[j] {
+		for j := 0; j < len(a); j++ {
+			if a[i] == a[j] && i != j {
 				found = true
 				break
 			}
